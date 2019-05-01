@@ -1,0 +1,219 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sites_ApiWithCertAuthPOC_name": {
+            "value": null
+        },
+        "sites_access_control_portal_name": {
+            "value": null
+        },
+        "sites_access_control_audit_api_name": {
+            "value": null
+        },
+        "sites_IDMAADB2CAPI20180926031620_name": {
+            "value": null
+        },
+        "sites_access_control_user_mgmt_api_name": {
+            "value": null
+        },
+        "storageAccounts_gs1usadb2caudit_name": {
+            "value": null
+        },
+        "storageAccounts_gs1usb2cdev01sa_name": {
+            "value": null
+        },
+        "sites_access_control_claims_dev_api_name": {
+            "value": null
+        },
+        "config_web_name": {
+            "value": null
+        },
+        "config_web_name_1": {
+            "value": null
+        },
+        "config_web_name_2": {
+            "value": null
+        },
+        "servers_access_control_dev_database_server_name": {
+            "value": null
+        },
+        "serverfarms_access_control_dev_hostingplan_name": {
+            "value": null
+        },
+        "storageAccounts_gs1usadb2cusermigration_name": {
+            "value": null
+        },
+        "sites_access_control_dev_generic_rely_party_name": {
+            "value": null
+        },
+        "config_web_name_3": {
+            "value": null
+        },
+        "components_access_control_user_mgmt_api_name": {
+            "value": null
+        },
+        "components_access_control_claims_dev_api_name": {
+            "value": null
+        },
+        "config_web_name_4": {
+            "value": null
+        },
+        "config_web_name_5": {
+            "value": null
+        },
+        "serverfarms_access_control_dev_portals_hostingplan_name": {
+            "value": null
+        },
+        "searchServices_accesscontrol_dev_sql_azuresearch_name": {
+            "value": null
+        },
+        "serverfarms_GS1USAccessControlUserManagementApi20181_name": {
+            "value": null
+        },
+        "config_web_name_6": {
+            "value": null
+        },
+        "advisors_DropIndex_name": {
+            "value": null
+        },
+        "keys_ServiceManaged_name": {
+            "value": null
+        },
+        "advisors_CreateIndex_name": {
+            "value": null
+        },
+        "alertrules_Failure_Anomalies___access_control_user_mgmt_api_name": {
+            "value": null
+        },
+        "firewallRules_VPLocal_name": {
+            "value": null
+        },
+        "alertrules_Failure_Anomalies___access_control_claims_dev_api_name": {
+            "value": null
+        },
+        "firewallRules_VPLocal1_name": {
+            "value": null
+        },
+        "advisors_DefragmentIndex_name": {
+            "value": null
+        },
+        "auditingPolicies_Default_name": {
+            "value": null
+        },
+        "advisors_ForceLastGoodPlan_name": {
+            "value": null
+        },
+        "advisors_DbParameterization_name": {
+            "value": null
+        },
+        "encryptionProtector_current_name": {
+            "value": null
+        },
+        "hostNameBindings_apiwithcertauthpoc.gs1us.org_name": {
+            "value": null
+        },
+        "hostNameBindings_apiwithcertauthpoc.azurewebsites.net_name": {
+            "value": null
+        },
+        "firewallRules_AllowAllWindowsAzureIps_name": {
+            "value": null
+        },
+        "auditingPolicies_Default_name_1": {
+            "value": null
+        },
+        "databases_master_name": {
+            "value": null
+        },
+        "hostNameBindings_access_control_portal.azurewebsites.net_name": {
+            "value": null
+        },
+        "geoBackupPolicies_Default_name": {
+            "value": null
+        },
+        "databases_access_control_dev_claims_database_name": {
+            "value": null
+        },
+        "certificates_95A6987C0B067D3C93DBC342133C19C4E6F227C4_ad_b2c_1_dev_NorthCentralUSwebspace_name": {
+            "value": null
+        },
+        "hostNameBindings_access_control_audit_api.azurewebsites.net_name": {
+            "value": null
+        },
+        "firewallRules_ClientIPAddress_2018_11_21_05:28:38_name": {
+            "value": null
+        },
+        "firewallRules_ClientIPAddress_2018_11_27_01:09:28_name": {
+            "value": null
+        },
+        "firewallRules_ClientIPAddress_2018_11_27_01:45:17_name": {
+            "value": null
+        },
+        "firewallRules_ClientIPAddress_2018_11_27_03:11:29_name": {
+            "value": null
+        },
+        "firewallRules_ClientIPAddress_2018_11_27_09:16:46_name": {
+            "value": null
+        },
+        "firewallRules_ClientIPAddress_2018_11_30_07:38:54_name": {
+            "value": null
+        },
+        "firewallRules_ClientIPAddress_2018_12_13_13_33_56_name": {
+            "value": null
+        },
+        "firewallRules_ClientIPAddress_2018_12_13_18_12_17_name": {
+            "value": null
+        },
+        "firewallRules_ClientIPAddress_2018_12_14_07:46:37_name": {
+            "value": null
+        },
+        "firewallRules_ClientIPAddress_2018_12_19_06:15:29_name": {
+            "value": null
+        },
+        "firewallRules_ClientIPAddress_2018_12_21_05:41:08_name": {
+            "value": null
+        },
+        "transparentDataEncryption_current_name": {
+            "value": null
+        },
+        "hostNameBindings_idmaadb2capi20180926031620.azurewebsites.net_name": {
+            "value": null
+        },
+        "hostNameBindings_access_control_user_mgmt_api.azurewebsites.net_name": {
+            "value": null
+        },
+        "hostNameBindings_access_control_claims_dev_api.azurewebsites.net_name": {
+            "value": null
+        },
+        "advisors_DropIndex_name_1": {
+            "value": null
+        },
+        "advisors_CreateIndex_name_1": {
+            "value": null
+        },
+        "advisors_DefragmentIndex_name_1": {
+            "value": null
+        },
+        "auditingPolicies_Default_name_2": {
+            "value": null
+        },
+        "geoBackupPolicies_Default_name_1": {
+            "value": null
+        },
+        "advisors_ForceLastGoodPlan_name_1": {
+            "value": null
+        },
+        "advisors_DbParameterization_name_1": {
+            "value": null
+        },
+        "hostNameBindings_access_control_dev_generic_rely_party.azurewebsites.net_name": {
+            "value": null
+        },
+        "transparentDataEncryption_current_name_1": {
+            "value": null
+        },
+        "sites_IDMAADB2CAPI20180926031620_serverFarmId": {
+            "value": null
+        }
+    }
+}

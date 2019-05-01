@@ -1,0 +1,2505 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sites_ApiWithCertAuthPOC_name": {
+            "defaultValue": "ApiWithCertAuthPOC",
+            "type": "String"
+        },
+        "sites_access_control_portal_name": {
+            "defaultValue": "access-control-portal",
+            "type": "String"
+        },
+        "sites_access_control_audit_api_name": {
+            "defaultValue": "access-control-audit-api",
+            "type": "String"
+        },
+        "sites_IDMAADB2CAPI20180926031620_name": {
+            "defaultValue": "IDMAADB2CAPI20180926031620",
+            "type": "String"
+        },
+        "sites_access_control_user_mgmt_api_name": {
+            "defaultValue": "access-control-user-mgmt-api",
+            "type": "String"
+        },
+        "storageAccounts_gs1usadb2caudit_name": {
+            "defaultValue": "gs1usadb2caudit",
+            "type": "String"
+        },
+        "storageAccounts_gs1usb2cdev01sa_name": {
+            "defaultValue": "gs1usb2cdev01sa",
+            "type": "String"
+        },
+        "sites_access_control_claims_dev_api_name": {
+            "defaultValue": "access-control-claims-dev-api",
+            "type": "String"
+        },
+        "config_web_name": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "config_web_name_1": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "config_web_name_2": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "servers_access_control_dev_database_server_name": {
+            "defaultValue": "access-control-dev-database-server",
+            "type": "String"
+        },
+        "serverfarms_access_control_dev_hostingplan_name": {
+            "defaultValue": "access-control-dev-hostingplan",
+            "type": "String"
+        },
+        "storageAccounts_gs1usadb2cusermigration_name": {
+            "defaultValue": "gs1usadb2cusermigration",
+            "type": "String"
+        },
+        "sites_access_control_dev_generic_rely_party_name": {
+            "defaultValue": "access-control-dev-generic-rely-party",
+            "type": "String"
+        },
+        "config_web_name_3": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "components_access_control_user_mgmt_api_name": {
+            "defaultValue": "access-control-user-mgmt-api",
+            "type": "String"
+        },
+        "components_access_control_claims_dev_api_name": {
+            "defaultValue": "access-control-claims-dev-api",
+            "type": "String"
+        },
+        "config_web_name_4": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "config_web_name_5": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "serverfarms_access_control_dev_portals_hostingplan_name": {
+            "defaultValue": "access-control-dev-portals-hostingplan",
+            "type": "String"
+        },
+        "searchServices_accesscontrol_dev_sql_azuresearch_name": {
+            "defaultValue": "accesscontrol-dev-sql-azuresearch",
+            "type": "String"
+        },
+        "serverfarms_GS1USAccessControlUserManagementApi20181_name": {
+            "defaultValue": "GS1USAccessControlUserManagementApi20181",
+            "type": "String"
+        },
+        "config_web_name_6": {
+            "defaultValue": "web",
+            "type": "String"
+        },
+        "advisors_DropIndex_name": {
+            "defaultValue": "DropIndex",
+            "type": "String"
+        },
+        "keys_ServiceManaged_name": {
+            "defaultValue": "ServiceManaged",
+            "type": "String"
+        },
+        "advisors_CreateIndex_name": {
+            "defaultValue": "CreateIndex",
+            "type": "String"
+        },
+        "alertrules_Failure_Anomalies___access_control_user_mgmt_api_name": {
+            "defaultValue": "Failure Anomalies - access-control-user-mgmt-api",
+            "type": "String"
+        },
+        "firewallRules_VPLocal_name": {
+            "defaultValue": "VPLocal",
+            "type": "String"
+        },
+        "alertrules_Failure_Anomalies___access_control_claims_dev_api_name": {
+            "defaultValue": "Failure Anomalies - access-control-claims-dev-api",
+            "type": "String"
+        },
+        "firewallRules_VPLocal1_name": {
+            "defaultValue": "VPLocal1",
+            "type": "String"
+        },
+        "advisors_DefragmentIndex_name": {
+            "defaultValue": "DefragmentIndex",
+            "type": "String"
+        },
+        "auditingPolicies_Default_name": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "advisors_ForceLastGoodPlan_name": {
+            "defaultValue": "ForceLastGoodPlan",
+            "type": "String"
+        },
+        "advisors_DbParameterization_name": {
+            "defaultValue": "DbParameterization",
+            "type": "String"
+        },
+        "encryptionProtector_current_name": {
+            "defaultValue": "current",
+            "type": "String"
+        },
+        "hostNameBindings_apiwithcertauthpoc.gs1us.org_name": {
+            "defaultValue": "apiwithcertauthpoc.gs1us.org",
+            "type": "String"
+        },
+        "hostNameBindings_apiwithcertauthpoc.azurewebsites.net_name": {
+            "defaultValue": "apiwithcertauthpoc.azurewebsites.net",
+            "type": "String"
+        },
+        "firewallRules_AllowAllWindowsAzureIps_name": {
+            "defaultValue": "AllowAllWindowsAzureIps",
+            "type": "String"
+        },
+        "auditingPolicies_Default_name_1": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "databases_master_name": {
+            "defaultValue": "master",
+            "type": "String"
+        },
+        "hostNameBindings_access_control_portal.azurewebsites.net_name": {
+            "defaultValue": "access-control-portal.azurewebsites.net",
+            "type": "String"
+        },
+        "geoBackupPolicies_Default_name": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "databases_access_control_dev_claims_database_name": {
+            "defaultValue": "access-control-dev-claims-database",
+            "type": "String"
+        },
+        "certificates_95A6987C0B067D3C93DBC342133C19C4E6F227C4_ad_b2c_1_dev_NorthCentralUSwebspace_name": {
+            "defaultValue": "95A6987C0B067D3C93DBC342133C19C4E6F227C4-ad-b2c-1-dev-NorthCentralUSwebspace",
+            "type": "String"
+        },
+        "hostNameBindings_access_control_audit_api.azurewebsites.net_name": {
+            "defaultValue": "access-control-audit-api.azurewebsites.net",
+            "type": "String"
+        },
+        "firewallRules_ClientIPAddress_2018_11_21_05:28:38_name": {
+            "defaultValue": "ClientIPAddress_2018-11-21_05:28:38",
+            "type": "String"
+        },
+        "firewallRules_ClientIPAddress_2018_11_27_01:09:28_name": {
+            "defaultValue": "ClientIPAddress_2018-11-27_01:09:28",
+            "type": "String"
+        },
+        "firewallRules_ClientIPAddress_2018_11_27_01:45:17_name": {
+            "defaultValue": "ClientIPAddress_2018-11-27_01:45:17",
+            "type": "String"
+        },
+        "firewallRules_ClientIPAddress_2018_11_27_03:11:29_name": {
+            "defaultValue": "ClientIPAddress_2018-11-27_03:11:29",
+            "type": "String"
+        },
+        "firewallRules_ClientIPAddress_2018_11_27_09:16:46_name": {
+            "defaultValue": "ClientIPAddress_2018-11-27_09:16:46",
+            "type": "String"
+        },
+        "firewallRules_ClientIPAddress_2018_11_30_07:38:54_name": {
+            "defaultValue": "ClientIPAddress_2018-11-30_07:38:54",
+            "type": "String"
+        },
+        "firewallRules_ClientIPAddress_2018_12_13_13_33_56_name": {
+            "defaultValue": "ClientIPAddress_2018-12-13_13-33-56",
+            "type": "String"
+        },
+        "firewallRules_ClientIPAddress_2018_12_13_18_12_17_name": {
+            "defaultValue": "ClientIPAddress_2018-12-13_18-12-17",
+            "type": "String"
+        },
+        "firewallRules_ClientIPAddress_2018_12_14_07:46:37_name": {
+            "defaultValue": "ClientIPAddress_2018-12-14_07:46:37",
+            "type": "String"
+        },
+        "firewallRules_ClientIPAddress_2018_12_19_06:15:29_name": {
+            "defaultValue": "ClientIPAddress_2018-12-19_06:15:29",
+            "type": "String"
+        },
+        "firewallRules_ClientIPAddress_2018_12_21_05:41:08_name": {
+            "defaultValue": "ClientIPAddress_2018-12-21_05:41:08",
+            "type": "String"
+        },
+        "transparentDataEncryption_current_name": {
+            "defaultValue": "current",
+            "type": "String"
+        },
+        "hostNameBindings_idmaadb2capi20180926031620.azurewebsites.net_name": {
+            "defaultValue": "idmaadb2capi20180926031620.azurewebsites.net",
+            "type": "String"
+        },
+        "hostNameBindings_access_control_user_mgmt_api.azurewebsites.net_name": {
+            "defaultValue": "access-control-user-mgmt-api.azurewebsites.net",
+            "type": "String"
+        },
+        "hostNameBindings_access_control_claims_dev_api.azurewebsites.net_name": {
+            "defaultValue": "access-control-claims-dev-api.azurewebsites.net",
+            "type": "String"
+        },
+        "advisors_DropIndex_name_1": {
+            "defaultValue": "DropIndex",
+            "type": "String"
+        },
+        "advisors_CreateIndex_name_1": {
+            "defaultValue": "CreateIndex",
+            "type": "String"
+        },
+        "advisors_DefragmentIndex_name_1": {
+            "defaultValue": "DefragmentIndex",
+            "type": "String"
+        },
+        "auditingPolicies_Default_name_2": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "geoBackupPolicies_Default_name_1": {
+            "defaultValue": "Default",
+            "type": "String"
+        },
+        "advisors_ForceLastGoodPlan_name_1": {
+            "defaultValue": "ForceLastGoodPlan",
+            "type": "String"
+        },
+        "advisors_DbParameterization_name_1": {
+            "defaultValue": "DbParameterization",
+            "type": "String"
+        },
+        "hostNameBindings_access_control_dev_generic_rely_party.azurewebsites.net_name": {
+            "defaultValue": "access-control-dev-generic-rely-party.azurewebsites.net",
+            "type": "String"
+        },
+        "transparentDataEncryption_current_name_1": {
+            "defaultValue": "current",
+            "type": "String"
+        },
+        "sites_IDMAADB2CAPI20180926031620_serverFarmId": {
+            "defaultValue": "/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/verifiedby-dev-rg/providers/Microsoft.Web/serverfarms/verifiedby-dev-hostingplan",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/microsoft.insights/alertrules/Failure Anomalies - access-control-claims-dev-api'.",
+            "type": "microsoft.insights/alertrules",
+            "name": "[parameters('alertrules_Failure_Anomalies___access_control_claims_dev_api_name')]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-link:/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/microsoft.insights/components/access-control-claims-dev-api": "Resource"
+            },
+            "scale": null,
+            "properties": {
+                "name": "[parameters('alertrules_Failure_Anomalies___access_control_claims_dev_api_name')]",
+                "description": "",
+                "isEnabled": true,
+                "condition": {
+                    "odata.type": "Microsoft.Azure.Management.Insights.Models.ThresholdRuleCondition",
+                    "dataSource": {
+                        "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleMetricDataSource",
+                        "resourceUri": "[resourceId('microsoft.insights/components', parameters('components_access_control_claims_dev_api_name'))]",
+                        "metricNamespace": null,
+                        "metricName": "advanced::A3108E3D-5E26-44CF-B232-783F5E20EF10::ewAiAEgAeQBwAGUAcgBpAG8AbgBBAHAAcABsAGkAYwBhAHQAaQBvAG4AUwBpAGQAIgA6AG4AdQBsAGwALAAiAEgAeQBwAGUAcgBpAG8AbgBTAHUAYgBqAGUAYwB0AFMAaQBkACIAOgBuAHUAbABsACwAIgBIAHkAcABlAHIAaQBvAG4ATwBiAHMAZQByAHYAZQByAFMAaQBkACIAOgBuAHUAbABsACwAIgBDAHUAcwB0AG8AbQBlAHIAQQBjAGMAbwB1AG4AdABJAGQAIgA6ACIAMAAwADAAMAAwADAAMAAwAC0AMAAwADAAMAAtADAAMAAwADAALQAwADAAMAAwAC0AMAAwADAAMAAwADAAMAAwADAAMAAwADAAIgAsACIAQQBwAHAAbABpAGMAYQB0AGkAbwBuAE4AYQBtAGUAIgA6AG4AdQBsAGwALAAiAEEAcABwAGwAaQBjAGEAdABpAG8AbgBJAGQAIgA6AG4AdQBsAGwALAAiAFAAcgBvAGYAaQBsAGUASQBkACIAOgAwACwAIgBXAGkAbgBkAG8AdwBTAGkAegBlAEkAbgBNAGkAbgB1AHQAZQBzACIAOgA2ADAALAAiAE0AZQB0AHIAaQBjAE4AYQBtAGUAIgA6ACIAIgAsACIAVABoAHIAZQBzAGgAbwBsAGQAIgA6ADIALgAwACwAIgBBAGwAZQByAHQAVABlAG0AcABsAGEAdABlAEkAZAAiADoAIgAiACwAIgBSAHUAbABlAEkAZAAiADoAIgAiACwAIgBSAHUAbABlAE4AYQBtAGUAIgA6ACIAIgAsACIAUgB1AGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AIgA6ACIAIgAsACIAUgBlAHMAbwB1AHIAYwBlAEkAZAAiADoAbgB1AGwAbAAsACIAUwB1AGIAcwBjAHIAaQBwAHQAaQBvAG4ASQBkACIAOgBuAHUAbABsACwAIgBBAGcAZwByAGUAZwBhAHQAZQBGAHUAbgBjAHQAaQBvAG4AIgA6ACIAIgAsACIAQwBvAG0AcABhAHIAaQBzAG8AbgBPAHAAZQByAGEAdABvAHIAIgA6ACIAewBcACIAQgBhAHMAZQBsAGkAbgBlAFQAaQBtAGUAcwBwAGEAbgBcACIAOgBcACIAMAAwADoANAAwADoAMAAwAFwAIgAsAFwAIgBJAG4AcwBpAGcAaAB0AHMAUwBlAHIAdgBpAGMAZQBMAGEAZwBcACIAOgBcACIAMAAwADoAMAAwADoAMAAwAFwAIgAsAFwAIgBCAHUAZgBmAGUAcgBUAGkAbQBlAFwAIgA6AFwAIgAwADAAOgAwADEAOgAwADAAXAAiACwAXAAiAEIAbABvAGIAUwB0AG8AcgBhAGcAZQBMAG8AZwBnAGkAbgBnAEUAbgBhAGIAbABlAGQAXAAiADoAZgBhAGwAcwBlACwAXAAiAFUAcwBlAHIAUwB1AHAAcAByAGUAcwBzAGkAbwBuAHMAXAAiADoAbgB1AGwAbAAsAFwAIgBQAHIAbwBmAGkAbABlAEkAZABcACIAOgAwACwAXAAiAEUAbQBhAGkAbABUAHkAcABlAFwAIgA6ADAALABcACIAUgBkAGQARgBhAGkAbAB1AHIAZQBzAFMAcABpAGsAZQBUAGgAcgBlAHMAaABvAGwAZABcACIAOgAzAC4AMAAsAFwAIgBSAGEAdwBQAHIAbwBhAGMAdABpAHYAZQBSAHUAbABlAEMAbwBuAGYAaQBnAFwAIgA6AG4AdQBsAGwAfQAiACwAIgBFAG4AYQBiAGwAZQBTAGUAbgBkAEUAbQBhAGkAbABUAG8AQwB1AHMAdABvAG0AIgA6AGYAYQBsAHMAZQAsACIAQwB1AHMAdABvAG0ARQBtAGEAaQBsAHMARQBuAGMAbwBkAGUAZAAiADoAIgAiACwAIgBFAG4AYQBiAGwAZQBTAGUAbgBkAEUAbQBhAGkAbABUAG8ATwB3AG4AZQByAHMAIgA6AGYAYQBsAHMAZQB9AA=="
+                    },
+                    "operator": "GreaterThan",
+                    "threshold": 2,
+                    "windowSize": "PT1H"
+                },
+                "action": {
+                    "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleEmailAction",
+                    "sendToServiceOwners": true,
+                    "customEmails": []
+                }
+            },
+            "dependsOn": [
+                "[resourceId('microsoft.insights/components', parameters('components_access_control_claims_dev_api_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/microsoft.insights/alertrules/Failure Anomalies - access-control-user-mgmt-api'.",
+            "type": "microsoft.insights/alertrules",
+            "name": "[parameters('alertrules_Failure_Anomalies___access_control_user_mgmt_api_name')]",
+            "apiVersion": "2014-04-01",
+            "location": "South Central US",
+            "tags": {
+                "hidden-link:/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/microsoft.insights/components/access-control-user-mgmt-api": "Resource"
+            },
+            "scale": null,
+            "properties": {
+                "name": "[parameters('alertrules_Failure_Anomalies___access_control_user_mgmt_api_name')]",
+                "description": "",
+                "isEnabled": true,
+                "condition": {
+                    "odata.type": "Microsoft.Azure.Management.Insights.Models.ThresholdRuleCondition",
+                    "dataSource": {
+                        "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleMetricDataSource",
+                        "resourceUri": "[resourceId('microsoft.insights/components', parameters('components_access_control_user_mgmt_api_name'))]",
+                        "metricNamespace": null,
+                        "metricName": "advanced::A3108E3D-5E26-44CF-B232-783F5E20EF10::ewAiAEgAeQBwAGUAcgBpAG8AbgBBAHAAcABsAGkAYwBhAHQAaQBvAG4AUwBpAGQAIgA6AG4AdQBsAGwALAAiAEgAeQBwAGUAcgBpAG8AbgBTAHUAYgBqAGUAYwB0AFMAaQBkACIAOgBuAHUAbABsACwAIgBIAHkAcABlAHIAaQBvAG4ATwBiAHMAZQByAHYAZQByAFMAaQBkACIAOgBuAHUAbABsACwAIgBDAHUAcwB0AG8AbQBlAHIAQQBjAGMAbwB1AG4AdABJAGQAIgA6ACIAMAAwADAAMAAwADAAMAAwAC0AMAAwADAAMAAtADAAMAAwADAALQAwADAAMAAwAC0AMAAwADAAMAAwADAAMAAwADAAMAAwADAAIgAsACIAQQBwAHAAbABpAGMAYQB0AGkAbwBuAE4AYQBtAGUAIgA6AG4AdQBsAGwALAAiAEEAcABwAGwAaQBjAGEAdABpAG8AbgBJAGQAIgA6AG4AdQBsAGwALAAiAFAAcgBvAGYAaQBsAGUASQBkACIAOgAwACwAIgBXAGkAbgBkAG8AdwBTAGkAegBlAEkAbgBNAGkAbgB1AHQAZQBzACIAOgA2ADAALAAiAE0AZQB0AHIAaQBjAE4AYQBtAGUAIgA6ACIAIgAsACIAVABoAHIAZQBzAGgAbwBsAGQAIgA6ADIALgAwACwAIgBBAGwAZQByAHQAVABlAG0AcABsAGEAdABlAEkAZAAiADoAIgAiACwAIgBSAHUAbABlAEkAZAAiADoAIgAiACwAIgBSAHUAbABlAE4AYQBtAGUAIgA6ACIAIgAsACIAUgB1AGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AIgA6ACIAIgAsACIAUgBlAHMAbwB1AHIAYwBlAEkAZAAiADoAbgB1AGwAbAAsACIAUwB1AGIAcwBjAHIAaQBwAHQAaQBvAG4ASQBkACIAOgBuAHUAbABsACwAIgBBAGcAZwByAGUAZwBhAHQAZQBGAHUAbgBjAHQAaQBvAG4AIgA6ACIAIgAsACIAQwBvAG0AcABhAHIAaQBzAG8AbgBPAHAAZQByAGEAdABvAHIAIgA6ACIAewBcACIAQgBhAHMAZQBsAGkAbgBlAFQAaQBtAGUAcwBwAGEAbgBcACIAOgBcACIAMAAwADoANAAwADoAMAAwAFwAIgAsAFwAIgBJAG4AcwBpAGcAaAB0AHMAUwBlAHIAdgBpAGMAZQBMAGEAZwBcACIAOgBcACIAMAAwADoAMAAwADoAMAAwAFwAIgAsAFwAIgBCAHUAZgBmAGUAcgBUAGkAbQBlAFwAIgA6AFwAIgAwADAAOgAwADEAOgAwADAAXAAiACwAXAAiAEIAbABvAGIAUwB0AG8AcgBhAGcAZQBMAG8AZwBnAGkAbgBnAEUAbgBhAGIAbABlAGQAXAAiADoAZgBhAGwAcwBlACwAXAAiAFUAcwBlAHIAUwB1AHAAcAByAGUAcwBzAGkAbwBuAHMAXAAiADoAbgB1AGwAbAAsAFwAIgBQAHIAbwBmAGkAbABlAEkAZABcACIAOgAwACwAXAAiAEUAbQBhAGkAbABUAHkAcABlAFwAIgA6ADAALABcACIAUgBkAGQARgBhAGkAbAB1AHIAZQBzAFMAcABpAGsAZQBUAGgAcgBlAHMAaABvAGwAZABcACIAOgAzAC4AMAAsAFwAIgBSAGEAdwBQAHIAbwBhAGMAdABpAHYAZQBSAHUAbABlAEMAbwBuAGYAaQBnAFwAIgA6AG4AdQBsAGwAfQAiACwAIgBFAG4AYQBiAGwAZQBTAGUAbgBkAEUAbQBhAGkAbABUAG8AQwB1AHMAdABvAG0AIgA6AGYAYQBsAHMAZQAsACIAQwB1AHMAdABvAG0ARQBtAGEAaQBsAHMARQBuAGMAbwBkAGUAZAAiADoAIgAiACwAIgBFAG4AYQBiAGwAZQBTAGUAbgBkAEUAbQBhAGkAbABUAG8ATwB3AG4AZQByAHMAIgA6AGYAYQBsAHMAZQB9AA=="
+                    },
+                    "operator": "GreaterThan",
+                    "threshold": 2,
+                    "windowSize": "PT1H"
+                },
+                "action": {
+                    "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleEmailAction",
+                    "sendToServiceOwners": true,
+                    "customEmails": []
+                }
+            },
+            "dependsOn": [
+                "[resourceId('microsoft.insights/components', parameters('components_access_control_user_mgmt_api_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/microsoft.insights/components/access-control-claims-dev-api'.",
+            "type": "microsoft.insights/components",
+            "kind": "web",
+            "name": "[parameters('components_access_control_claims_dev_api_name')]",
+            "apiVersion": "2015-05-01",
+            "location": "southcentralus",
+            "tags": {
+                "hidden-link:/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/access-control-claims-dev-api": "Resource"
+            },
+            "scale": null,
+            "properties": {
+                "Application_Type": "web",
+                "Flow_Type": "Redfield",
+                "Request_Source": null,
+                "HockeyAppId": "",
+                "SamplingPercentage": null
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/microsoft.insights/components/access-control-user-mgmt-api'.",
+            "type": "microsoft.insights/components",
+            "kind": "web",
+            "name": "[parameters('components_access_control_user_mgmt_api_name')]",
+            "apiVersion": "2015-05-01",
+            "location": "southcentralus",
+            "tags": {
+                "hidden-link:/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/access-control-user-mgmt-api": "Resource"
+            },
+            "scale": null,
+            "properties": {
+                "Application_Type": "web",
+                "Flow_Type": "Redfield",
+                "Request_Source": null,
+                "HockeyAppId": "",
+                "SamplingPercentage": null
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Search/searchServices/accesscontrol-dev-sql-azuresearch'.",
+            "type": "Microsoft.Search/searchServices",
+            "sku": {
+                "name": "standard"
+            },
+            "name": "[parameters('searchServices_accesscontrol_dev_sql_azuresearch_name')]",
+            "apiVersion": "2015-08-19",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "replicaCount": 1,
+                "partitionCount": 1,
+                "hostingMode": "Default"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server'.",
+            "type": "Microsoft.Sql/servers",
+            "kind": "v12.0",
+            "name": "[parameters('servers_access_control_dev_database_server_name')]",
+            "apiVersion": "2015-05-01-preview",
+            "location": "northcentralus",
+            "scale": null,
+            "properties": {
+                "administratorLogin": "goldenknightsadmin",
+                "version": "12.0"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Storage/storageAccounts/gs1usadb2caudit'.",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_RAGRS",
+                "tier": "Standard"
+            },
+            "kind": "StorageV2",
+            "name": "[parameters('storageAccounts_gs1usadb2caudit_name')]",
+            "apiVersion": "2018-07-01",
+            "location": "eastus",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": true,
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "enabled": true
+                        },
+                        "blob": {
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                },
+                "accessTier": "Hot"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Storage/storageAccounts/gs1usadb2cusermigration'.",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_RAGRS",
+                "tier": "Standard"
+            },
+            "kind": "StorageV2",
+            "name": "[parameters('storageAccounts_gs1usadb2cusermigration_name')]",
+            "apiVersion": "2018-07-01",
+            "location": "northcentralus",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": true,
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "enabled": true
+                        },
+                        "blob": {
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                },
+                "accessTier": "Hot"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Storage/storageAccounts/gs1usb2cdev01sa'.",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_RAGRS",
+                "tier": "Standard"
+            },
+            "kind": "StorageV2",
+            "name": "[parameters('storageAccounts_gs1usb2cdev01sa_name')]",
+            "apiVersion": "2018-07-01",
+            "location": "northcentralus",
+            "tags": {},
+            "scale": null,
+            "properties": {
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": true,
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "enabled": true
+                        },
+                        "blob": {
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                },
+                "accessTier": "Hot"
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/certificates/95A6987C0B067D3C93DBC342133C19C4E6F227C4-ad-b2c-1-dev-NorthCentralUSwebspace'.",
+            "type": "Microsoft.Web/certificates",
+            "name": "[parameters('certificates_95A6987C0B067D3C93DBC342133C19C4E6F227C4_ad_b2c_1_dev_NorthCentralUSwebspace_name')]",
+            "apiVersion": "2016-03-01",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "hostNames": [
+                    "*.gs1us.org",
+                    "gs1us.org"
+                ],
+                "pfxBlob": null,
+                "password": null,
+                "cerBlob": null,
+                "serverFarmId": null
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/serverfarms/GS1USAccessControlUserManagementApi20181'.",
+            "type": "Microsoft.Web/serverfarms",
+            "sku": {
+                "name": "S1",
+                "tier": "Standard",
+                "size": "S1",
+                "family": "S",
+                "capacity": 1
+            },
+            "kind": "app",
+            "name": "[parameters('serverfarms_GS1USAccessControlUserManagementApi20181_name')]",
+            "apiVersion": "2016-09-01",
+            "location": "Central US",
+            "scale": null,
+            "properties": {
+                "name": "[parameters('serverfarms_GS1USAccessControlUserManagementApi20181_name')]",
+                "workerTierName": null,
+                "adminSiteName": null,
+                "hostingEnvironmentProfile": null,
+                "perSiteScaling": false,
+                "reserved": false,
+                "targetWorkerCount": 0,
+                "targetWorkerSizeId": 0
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/serverfarms/access-control-dev-hostingplan'.",
+            "type": "Microsoft.Web/serverfarms",
+            "sku": {
+                "name": "S1",
+                "tier": "Standard",
+                "size": "S1",
+                "family": "S",
+                "capacity": 1
+            },
+            "kind": "app",
+            "name": "[parameters('serverfarms_access_control_dev_hostingplan_name')]",
+            "apiVersion": "2016-09-01",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "name": "[parameters('serverfarms_access_control_dev_hostingplan_name')]",
+                "workerTierName": null,
+                "adminSiteName": null,
+                "hostingEnvironmentProfile": null,
+                "perSiteScaling": false,
+                "reserved": false,
+                "targetWorkerCount": 0,
+                "targetWorkerSizeId": 0
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/serverfarms/access-control-dev-portals-hostingplan'.",
+            "type": "Microsoft.Web/serverfarms",
+            "sku": {
+                "name": "S1",
+                "tier": "Standard",
+                "size": "S1",
+                "family": "S",
+                "capacity": 1
+            },
+            "kind": "app",
+            "name": "[parameters('serverfarms_access_control_dev_portals_hostingplan_name')]",
+            "apiVersion": "2016-09-01",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "name": "[parameters('serverfarms_access_control_dev_portals_hostingplan_name')]",
+                "workerTierName": null,
+                "adminSiteName": null,
+                "hostingEnvironmentProfile": null,
+                "perSiteScaling": false,
+                "reserved": false,
+                "targetWorkerCount": 0,
+                "targetWorkerSizeId": 0
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/IDMAADB2CAPI20180926031620'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "app",
+            "name": "[parameters('sites_IDMAADB2CAPI20180926031620_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "identity": {
+                "principalId": "3db49d1d-95e0-4130-8ba6-8cb0cf5d794b",
+                "tenantId": "862adc93-1361-478a-bb32-c28d2d00df8d",
+                "type": "SystemAssigned"
+            },
+            "tags": {
+                "hidden-related:/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/verifiedby-dev-rg/providers/Microsoft.Web/serverfarms/verifiedby-dev-hostingplan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_IDMAADB2CAPI20180926031620_name'),'idmaadb2capi20180926031620.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_IDMAADB2CAPI20180926031620_name'),'idmaadb2capi20180926031620.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[parameters('sites_IDMAADB2CAPI20180926031620_serverFarmId')]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": true,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null,
+                "httpsOnly": true
+            },
+            "dependsOn": []
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/access-control-claims-dev-api'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "app",
+            "name": "[parameters('sites_access_control_claims_dev_api_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "identity": {
+                "principalId": "c53b7fca-4dac-4f4b-8731-7bd8b35c95ac",
+                "tenantId": "862adc93-1361-478a-bb32-c28d2d00df8d",
+                "type": "SystemAssigned"
+            },
+            "tags": {
+                "hidden-related:/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/serverfarms/access-control-dev-hostingplan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_access_control_claims_dev_api_name'),'.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_access_control_claims_dev_api_name'),'.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_access_control_dev_hostingplan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": true,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null,
+                "httpsOnly": true
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_access_control_dev_hostingplan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/access-control-portal'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "app",
+            "name": "[parameters('sites_access_control_portal_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "identity": {
+                "principalId": "cc66c225-e9cb-40f8-b07d-96f45b0c215c",
+                "tenantId": "862adc93-1361-478a-bb32-c28d2d00df8d",
+                "type": "SystemAssigned"
+            },
+            "tags": {
+                "hidden-related:/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/serverfarms/access-control-dev-hostingplan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_access_control_portal_name'),'.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_access_control_portal_name'),'.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_access_control_dev_hostingplan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": true,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null,
+                "httpsOnly": true
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_access_control_dev_hostingplan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/access-control-audit-api'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "app",
+            "name": "[parameters('sites_access_control_audit_api_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "identity": {
+                "principalId": "7f2859c1-5d87-4da0-9f0f-f94525094891",
+                "tenantId": "862adc93-1361-478a-bb32-c28d2d00df8d",
+                "type": "SystemAssigned"
+            },
+            "tags": {
+                "hidden-related:/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/serverfarms/access-control-dev-hostingplan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_access_control_audit_api_name'),'.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_access_control_audit_api_name'),'.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_access_control_dev_hostingplan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": true,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null,
+                "httpsOnly": true
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_access_control_dev_hostingplan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/access-control-dev-generic-rely-party'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "app",
+            "name": "[parameters('sites_access_control_dev_generic_rely_party_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "identity": {
+                "principalId": "2b006a09-2a13-4ea3-a95c-93dcbf1640db",
+                "tenantId": "862adc93-1361-478a-bb32-c28d2d00df8d",
+                "type": "SystemAssigned"
+            },
+            "tags": {
+                "hidden-related:/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/serverfarms/access-control-dev-hostingplan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_access_control_dev_generic_rely_party_name'),'.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_access_control_dev_generic_rely_party_name'),'.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_access_control_dev_hostingplan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": true,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null,
+                "httpsOnly": true
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_access_control_dev_hostingplan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/access-control-user-mgmt-api'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "app",
+            "name": "[parameters('sites_access_control_user_mgmt_api_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "identity": {
+                "principalId": "1df6132b-bcb2-4133-ae19-f00fed55bf9f",
+                "tenantId": "862adc93-1361-478a-bb32-c28d2d00df8d",
+                "type": "SystemAssigned"
+            },
+            "tags": {
+                "hidden-related:/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/serverfarms/access-control-dev-hostingplan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_access_control_user_mgmt_api_name'),'.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_access_control_user_mgmt_api_name'),'.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_access_control_dev_hostingplan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": true,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null,
+                "httpsOnly": true
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_access_control_dev_hostingplan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/ApiWithCertAuthPOC'.",
+            "type": "Microsoft.Web/sites",
+            "kind": "api",
+            "name": "[parameters('sites_ApiWithCertAuthPOC_name')]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(parameters('sites_ApiWithCertAuthPOC_name'),'apiwithcertauthpoc.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_ApiWithCertAuthPOC_name'),'apiwithcertauthpoc.gs1us.org')]",
+                        "sslState": "SniEnabled",
+                        "virtualIP": null,
+                        "thumbprint": "95A6987C0B067D3C93DBC342133C19C4E6F227C4",
+                        "toUpdate": null,
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(parameters('sites_ApiWithCertAuthPOC_name'),'apiwithcertauthpoc.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "virtualIP": null,
+                        "thumbprint": null,
+                        "toUpdate": null,
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_access_control_dev_portals_hostingplan_name'))]",
+                "reserved": false,
+                "siteConfig": null,
+                "scmSiteAlsoStopped": false,
+                "hostingEnvironmentProfile": null,
+                "clientAffinityEnabled": true,
+                "clientCertEnabled": true,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "cloningInfo": null,
+                "httpsOnly": true
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('serverfarms_access_control_dev_portals_hostingplan_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/advisors/CreateIndex'.",
+            "type": "Microsoft.Sql/servers/advisors",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('advisors_CreateIndex_name'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/advisors/DropIndex'.",
+            "type": "Microsoft.Sql/servers/advisors",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('advisors_DropIndex_name'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/advisors/DbParameterization'.",
+            "type": "Microsoft.Sql/servers/advisors",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('advisors_DbParameterization_name'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/advisors/DefragmentIndex'.",
+            "type": "Microsoft.Sql/servers/advisors",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('advisors_DefragmentIndex_name'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/advisors/ForceLastGoodPlan'.",
+            "type": "Microsoft.Sql/servers/advisors",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('advisors_ForceLastGoodPlan_name'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/auditingPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/auditingPolicies",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('auditingPolicies_Default_name'))]",
+            "apiVersion": "2014-04-01",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "auditingState": "New",
+                "eventTypesToAudit": "PlainSQL_Success,PlainSQL_Failure,ParameterizedSQL_Success,ParameterizedSQL_Failure,StoredProcedure_Success,StoredProcedure_Failure,Login_Success,Login_Failure,TransactionManagement_Success,TransactionManagement_Failure",
+                "storageAccountName": null,
+                "storageAccountKey": null,
+                "storageAccountSecondaryKey": null,
+                "storageTableEndpoint": null,
+                "storageAccountResourceGroupName": null,
+                "storageAccountSubscriptionId": null,
+                "fullAuditLogsTableName": "SQLDBAuditLogsAccesscontroldevdatabaseserver",
+                "auditLogsTableName": "Accesscontroldevdatabaseserver",
+                "retentionDays": "0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/databases/access-control-dev-claims-database'.",
+            "type": "Microsoft.Sql/servers/databases",
+            "sku": {
+                "name": "S0",
+                "tier": "Standard"
+            },
+            "kind": "v12.0,user",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('databases_access_control_dev_claims_database_name'))]",
+            "apiVersion": "2017-03-01-preview",
+            "location": "northcentralus",
+            "scale": null,
+            "properties": {
+                "collation": "SQL_Latin1_General_CP1_CI_AS",
+                "maxSizeBytes": 268435456000,
+                "catalogCollation": "SQL_Latin1_General_CP1_CI_AS",
+                "zoneRedundant": false
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/firewallRules/AllowAllWindowsAzureIps'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('firewallRules_AllowAllWindowsAzureIps_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "0.0.0.0",
+                "endIpAddress": "0.0.0.0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/firewallRules/ClientIPAddress_2018-11-21_05:28:38'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('firewallRules_ClientIPAddress_2018_11_21_05:28:38_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "74.68.157.217",
+                "endIpAddress": "74.68.157.217"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/firewallRules/ClientIPAddress_2018-11-27_01:09:28'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('firewallRules_ClientIPAddress_2018_11_27_01:09:28_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "172.58.225.22",
+                "endIpAddress": "172.58.225.22"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/firewallRules/ClientIPAddress_2018-11-27_01:45:17'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('firewallRules_ClientIPAddress_2018_11_27_01:45:17_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "172.58.232.247",
+                "endIpAddress": "172.58.232.247"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/firewallRules/ClientIPAddress_2018-11-27_03:11:29'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('firewallRules_ClientIPAddress_2018_11_27_03:11:29_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "65.206.37.130",
+                "endIpAddress": "65.206.37.130"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/firewallRules/ClientIPAddress_2018-11-27_09:16:46'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('firewallRules_ClientIPAddress_2018_11_27_09:16:46_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "50.236.226.162",
+                "endIpAddress": "50.236.226.162"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/firewallRules/ClientIPAddress_2018-11-30_07:38:54'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('firewallRules_ClientIPAddress_2018_11_30_07:38:54_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "100.14.40.34",
+                "endIpAddress": "100.14.40.34"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/firewallRules/ClientIPAddress_2018-12-13_13-33-56'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('firewallRules_ClientIPAddress_2018_12_13_13_33_56_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "203.197.178.142",
+                "endIpAddress": "203.197.178.142"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/firewallRules/ClientIPAddress_2018-12-13_18-12-17'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('firewallRules_ClientIPAddress_2018_12_13_18_12_17_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "103.5.135.70",
+                "endIpAddress": "103.5.135.70"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/firewallRules/ClientIPAddress_2018-12-14_07:46:37'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('firewallRules_ClientIPAddress_2018_12_14_07:46:37_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "76.117.237.99",
+                "endIpAddress": "76.117.237.99"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/firewallRules/ClientIPAddress_2018-12-19_06:15:29'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('firewallRules_ClientIPAddress_2018_12_19_06:15:29_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "68.80.222.122",
+                "endIpAddress": "68.80.222.122"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/firewallRules/ClientIPAddress_2018-12-21_05:41:08'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('firewallRules_ClientIPAddress_2018_12_21_05:41:08_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "173.71.123.167",
+                "endIpAddress": "173.71.123.167"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/firewallRules/VPLocal'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('firewallRules_VPLocal_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "192.168.1.1",
+                "endIpAddress": "192.168.1.18"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/firewallRules/VPLocal1'.",
+            "type": "Microsoft.Sql/servers/firewallRules",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('firewallRules_VPLocal1_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "startIpAddress": "24.228.178.0",
+                "endIpAddress": "24.228.178.255"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/encryptionProtector/current'.",
+            "type": "Microsoft.Sql/servers/encryptionProtector",
+            "kind": "servicemanaged",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('encryptionProtector_current_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "serverKeyName": "ServiceManaged",
+                "serverKeyType": "ServiceManaged"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/keys/ServiceManaged'.",
+            "type": "Microsoft.Sql/servers/keys",
+            "kind": "servicemanaged",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('keys_ServiceManaged_name'))]",
+            "apiVersion": "2015-05-01-preview",
+            "scale": null,
+            "properties": {
+                "serverKeyType": "[parameters('keys_ServiceManaged_name')]"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/databases/access-control-dev-claims-database/advisors/CreateIndex'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('databases_access_control_dev_claims_database_name'), '/', parameters('advisors_CreateIndex_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_access_control_dev_database_server_name'), parameters('databases_access_control_dev_claims_database_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/databases/access-control-dev-claims-database/advisors/DropIndex'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('databases_access_control_dev_claims_database_name'), '/', parameters('advisors_DropIndex_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_access_control_dev_database_server_name'), parameters('databases_access_control_dev_claims_database_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/databases/access-control-dev-claims-database/advisors/DbParameterization'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('databases_access_control_dev_claims_database_name'), '/', parameters('advisors_DbParameterization_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_access_control_dev_database_server_name'), parameters('databases_access_control_dev_claims_database_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/databases/access-control-dev-claims-database/advisors/DefragmentIndex'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('databases_access_control_dev_claims_database_name'), '/', parameters('advisors_DefragmentIndex_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_access_control_dev_database_server_name'), parameters('databases_access_control_dev_claims_database_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/databases/access-control-dev-claims-database/advisors/ForceLastGoodPlan'.",
+            "type": "Microsoft.Sql/servers/databases/advisors",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('databases_access_control_dev_claims_database_name'), '/', parameters('advisors_ForceLastGoodPlan_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "scale": null,
+            "properties": {
+                "autoExecuteValue": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_access_control_dev_database_server_name'), parameters('databases_access_control_dev_claims_database_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/databases/access-control-dev-claims-database/auditingPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/auditingPolicies",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('databases_access_control_dev_claims_database_name'), '/', parameters('auditingPolicies_Default_name_2'))]",
+            "apiVersion": "2014-04-01",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "auditingState": "New",
+                "eventTypesToAudit": "PlainSQL_Success,PlainSQL_Failure,ParameterizedSQL_Success,ParameterizedSQL_Failure,StoredProcedure_Success,StoredProcedure_Failure,Login_Success,Login_Failure,TransactionManagement_Success,TransactionManagement_Failure",
+                "storageAccountName": null,
+                "storageAccountKey": null,
+                "storageAccountSecondaryKey": null,
+                "storageTableEndpoint": null,
+                "storageAccountResourceGroupName": null,
+                "storageAccountSubscriptionId": null,
+                "useServerDefault": "Enabled",
+                "fullAuditLogsTableName": "SQLDBAuditLogsAccesscontroldevdatabAccesscontroldevclai",
+                "auditLogsTableName": "AccesscontroldevdatabAccesscontroldevclai",
+                "retentionDays": "0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_access_control_dev_database_server_name'), parameters('databases_access_control_dev_claims_database_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/databases/access-control-dev-claims-database/geoBackupPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/geoBackupPolicies",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('databases_access_control_dev_claims_database_name'), '/', parameters('geoBackupPolicies_Default_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "state": "Enabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_access_control_dev_database_server_name'), parameters('databases_access_control_dev_claims_database_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/databases/access-control-dev-claims-database/transparentDataEncryption/current'.",
+            "type": "Microsoft.Sql/servers/databases/transparentDataEncryption",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('databases_access_control_dev_claims_database_name'), '/', parameters('transparentDataEncryption_current_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "status": "Enabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]",
+                "[resourceId('Microsoft.Sql/servers/databases', parameters('servers_access_control_dev_database_server_name'), parameters('databases_access_control_dev_claims_database_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/databases/master/auditingPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/auditingPolicies",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('databases_master_name'), '/', parameters('auditingPolicies_Default_name_1'))]",
+            "apiVersion": "2014-04-01",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "auditingState": "New",
+                "eventTypesToAudit": "PlainSQL_Success,PlainSQL_Failure,ParameterizedSQL_Success,ParameterizedSQL_Failure,StoredProcedure_Success,StoredProcedure_Failure,Login_Success,Login_Failure,TransactionManagement_Success,TransactionManagement_Failure",
+                "storageAccountName": null,
+                "storageAccountKey": null,
+                "storageAccountSecondaryKey": null,
+                "storageTableEndpoint": null,
+                "storageAccountResourceGroupName": null,
+                "storageAccountSubscriptionId": null,
+                "useServerDefault": "Enabled",
+                "fullAuditLogsTableName": "SQLDBAuditLogsAccesscontroldevdatabaseserverMaster",
+                "auditLogsTableName": "AccesscontroldevdatabaseserverMaster",
+                "retentionDays": "0"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/databases/master/geoBackupPolicies/Default'.",
+            "type": "Microsoft.Sql/servers/databases/geoBackupPolicies",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('databases_master_name'), '/', parameters('geoBackupPolicies_Default_name'))]",
+            "apiVersion": "2014-04-01",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "state": "Enabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Sql/servers/access-control-dev-database-server/databases/master/transparentDataEncryption/current'.",
+            "type": "Microsoft.Sql/servers/databases/transparentDataEncryption",
+            "name": "[concat(parameters('servers_access_control_dev_database_server_name'), '/', parameters('databases_master_name'), '/', parameters('transparentDataEncryption_current_name'))]",
+            "apiVersion": "2014-04-01",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "status": "Disabled"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', parameters('servers_access_control_dev_database_server_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/IDMAADB2CAPI20180926031620/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_IDMAADB2CAPI20180926031620_name'), '/', parameters('config_web_name_3'))]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "tags": {
+                "hidden-related:/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/verifiedby-dev-rg/providers/Microsoft.Web/serverfarms/verifiedby-dev-hostingplan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "windowsFxVersion": null,
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": null,
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$IDMAADB2CAPI20180926031620",
+                "publishingPassword": null,
+                "appSettings": null,
+                "azureStorageAccounts": {},
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": null,
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "clientSecretCertificateThumbprint": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": null,
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "managedServiceIdentityId": 703,
+                "xManagedServiceIdentityId": null,
+                "ipSecurityRestrictions": null,
+                "http20Enabled": false,
+                "minTlsVersion": "1.2",
+                "ftpsState": "AllAllowed",
+                "reservedInstanceCount": 0
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_IDMAADB2CAPI20180926031620_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/IDMAADB2CAPI20180926031620/hostNameBindings/idmaadb2capi20180926031620.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_IDMAADB2CAPI20180926031620_name'), '/', parameters('hostNameBindings_idmaadb2capi20180926031620.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "IDMAADB2CAPI20180926031620",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_IDMAADB2CAPI20180926031620_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/access-control-claims-dev-api/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_access_control_claims_dev_api_name'), '/', parameters('config_web_name_5'))]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "tags": {
+                "hidden-related:/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/serverfarms/access-control-dev-hostingplan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "windowsFxVersion": null,
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": "VS2017",
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$access-control-claims-dev-api",
+                "publishingPassword": null,
+                "appSettings": null,
+                "azureStorageAccounts": {},
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": null,
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "clientSecretCertificateThumbprint": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": {
+                    "allowedOrigins": [
+                        "*"
+                    ],
+                    "supportCredentials": false
+                },
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "managedServiceIdentityId": 601,
+                "xManagedServiceIdentityId": null,
+                "ipSecurityRestrictions": null,
+                "http20Enabled": false,
+                "minTlsVersion": "1.2",
+                "ftpsState": "AllAllowed",
+                "reservedInstanceCount": 0
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_access_control_claims_dev_api_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/access-control-claims-dev-api/hostNameBindings/access-control-claims-dev-api.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_access_control_claims_dev_api_name'), '/', parameters('hostNameBindings_access_control_claims_dev_api.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "access-control-claims-dev-api",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_access_control_claims_dev_api_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/access-control-portal/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_access_control_portal_name'), '/', parameters('config_web_name_1'))]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "tags": {
+                "hidden-related:/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/serverfarms/access-control-dev-hostingplan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "windowsFxVersion": null,
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": null,
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$access-control-portal",
+                "publishingPassword": null,
+                "appSettings": null,
+                "azureStorageAccounts": {},
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": null,
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "clientSecretCertificateThumbprint": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": null,
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "managedServiceIdentityId": 1109,
+                "xManagedServiceIdentityId": null,
+                "ipSecurityRestrictions": null,
+                "http20Enabled": false,
+                "minTlsVersion": "1.2",
+                "ftpsState": "AllAllowed",
+                "reservedInstanceCount": 0
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_access_control_portal_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/access-control-portal/hostNameBindings/access-control-portal.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_access_control_portal_name'), '/', parameters('hostNameBindings_access_control_portal.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "access-control-portal",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_access_control_portal_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/access-control-audit-api/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_access_control_audit_api_name'), '/', parameters('config_web_name_2'))]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "tags": {
+                "hidden-related:/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/serverfarms/access-control-dev-hostingplan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "windowsFxVersion": null,
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": null,
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$access-control-audit-api",
+                "publishingPassword": null,
+                "appSettings": null,
+                "azureStorageAccounts": {},
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": null,
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "clientSecretCertificateThumbprint": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": null,
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "managedServiceIdentityId": 1110,
+                "xManagedServiceIdentityId": null,
+                "ipSecurityRestrictions": null,
+                "http20Enabled": false,
+                "minTlsVersion": "1.2",
+                "ftpsState": "AllAllowed",
+                "reservedInstanceCount": 0
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_access_control_audit_api_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/access-control-audit-api/hostNameBindings/access-control-audit-api.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_access_control_audit_api_name'), '/', parameters('hostNameBindings_access_control_audit_api.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "access-control-audit-api",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_access_control_audit_api_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/access-control-dev-generic-rely-party/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_access_control_dev_generic_rely_party_name'), '/', parameters('config_web_name_6'))]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "tags": {
+                "hidden-related:/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/serverfarms/access-control-dev-hostingplan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "windowsFxVersion": null,
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": null,
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$access-control-dev-generic-rely-party",
+                "publishingPassword": null,
+                "appSettings": null,
+                "azureStorageAccounts": {},
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": null,
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "clientSecretCertificateThumbprint": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": null,
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "managedServiceIdentityId": 8428,
+                "xManagedServiceIdentityId": null,
+                "ipSecurityRestrictions": null,
+                "http20Enabled": false,
+                "minTlsVersion": "1.2",
+                "ftpsState": "AllAllowed",
+                "reservedInstanceCount": 0
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_access_control_dev_generic_rely_party_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/access-control-dev-generic-rely-party/hostNameBindings/access-control-dev-generic-rely-party.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_access_control_dev_generic_rely_party_name'), '/', parameters('hostNameBindings_access_control_dev_generic_rely_party.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "access-control-dev-generic-rely-party",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_access_control_dev_generic_rely_party_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/access-control-user-mgmt-api/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_access_control_user_mgmt_api_name'), '/', parameters('config_web_name_4'))]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "tags": {
+                "hidden-related:/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/serverfarms/access-control-dev-hostingplan": "empty"
+            },
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "windowsFxVersion": null,
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": "VS2017",
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$access-control-user-mgmt-api",
+                "publishingPassword": null,
+                "appSettings": null,
+                "azureStorageAccounts": {},
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": null,
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "clientSecretCertificateThumbprint": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": {
+                    "allowedOrigins": [
+                        "*"
+                    ],
+                    "supportCredentials": false
+                },
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "managedServiceIdentityId": 1088,
+                "xManagedServiceIdentityId": null,
+                "ipSecurityRestrictions": null,
+                "http20Enabled": false,
+                "minTlsVersion": "1.2",
+                "ftpsState": "AllAllowed",
+                "reservedInstanceCount": 0
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_access_control_user_mgmt_api_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/access-control-user-mgmt-api/hostNameBindings/access-control-user-mgmt-api.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_access_control_user_mgmt_api_name'), '/', parameters('hostNameBindings_access_control_user_mgmt_api.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "access-control-user-mgmt-api",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_access_control_user_mgmt_api_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/ApiWithCertAuthPOC/config/web'.",
+            "type": "Microsoft.Web/sites/config",
+            "name": "[concat(parameters('sites_ApiWithCertAuthPOC_name'), '/', parameters('config_web_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php",
+                    "hostingstart.html"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "windowsFxVersion": null,
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "remoteDebuggingVersion": null,
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$ApiWithCertAuthPOC",
+                "publishingPassword": null,
+                "appSettings": null,
+                "azureStorageAccounts": {},
+                "metadata": null,
+                "connectionStrings": null,
+                "machineKey": null,
+                "handlerMappings": null,
+                "documentRoot": null,
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "javaVersion": null,
+                "javaContainer": null,
+                "javaContainerVersion": null,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "runtimeADUser": null,
+                "runtimeADUserPassword": null,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "limits": null,
+                "autoHealEnabled": false,
+                "autoHealRules": null,
+                "tracingOptions": null,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "clientSecretCertificateThumbprint": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": null,
+                "push": null,
+                "apiDefinition": null,
+                "autoSwapSlotName": null,
+                "localMySqlEnabled": false,
+                "managedServiceIdentityId": null,
+                "xManagedServiceIdentityId": null,
+                "ipSecurityRestrictions": null,
+                "http20Enabled": false,
+                "minTlsVersion": "1.2",
+                "ftpsState": "AllAllowed",
+                "reservedInstanceCount": 0
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_ApiWithCertAuthPOC_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/ApiWithCertAuthPOC/hostNameBindings/apiwithcertauthpoc.azurewebsites.net'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_ApiWithCertAuthPOC_name'), '/', parameters('hostNameBindings_apiwithcertauthpoc.azurewebsites.net_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "ApiWithCertAuthPOC",
+                "domainId": null,
+                "hostNameType": "Verified"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_ApiWithCertAuthPOC_name'))]"
+            ]
+        },
+        {
+            "comments": "Generalized from resource: '/subscriptions/8d0dfc5a-9e99-4596-acdc-94fbd1bb938d/resourceGroups/ad-b2c-1-dev/providers/Microsoft.Web/sites/ApiWithCertAuthPOC/hostNameBindings/apiwithcertauthpoc.gs1us.org'.",
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "name": "[concat(parameters('sites_ApiWithCertAuthPOC_name'), '/', parameters('hostNameBindings_apiwithcertauthpoc.gs1us.org_name'))]",
+            "apiVersion": "2016-08-01",
+            "location": "North Central US",
+            "scale": null,
+            "properties": {
+                "siteName": "ApiWithCertAuthPOC",
+                "domainId": null,
+                "hostNameType": "Verified",
+                "sslState": "SniEnabled",
+                "thumbprint": "95A6987C0B067D3C93DBC342133C19C4E6F227C4"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', parameters('sites_ApiWithCertAuthPOC_name'))]"
+            ]
+        }
+    ]
+}
